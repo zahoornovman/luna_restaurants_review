@@ -1,0 +1,8 @@
+name: luna
+dependencies:
+  - python=3.11.3
+  - pip=23.1.2
+  - pip:
+      - django==4.2.2
+      - djangorestframework==3.14.0
+      - djangorestframework-simplejwt==5.2.2
