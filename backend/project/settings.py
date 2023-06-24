@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,6 +25,8 @@ SECRET_KEY = "django-insecure-8nr-(n7lv11dk96)hm!&*opo2akv9)it^ggh($p$omd9k40qyp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+print(DEBUG)
+
 ALLOWED_HOSTS = []
 
 
@@ -37,7 +39,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    #own apps
+    'djangoUser'
+
 ]
+
+AUTH_USER_MODEL= 'djangoUser.DjangoUser'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -74,11 +82,16 @@ WSGI_APPLICATION = "project.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('POSTGRES_DB'),
+        "PORT": os.environ.get('POSTGRES_PORT'),
+        "HOST": os.environ.get('POSTGRES_HOST'),
+        "USER": os.environ.get('POSTGRES_USER'),
+        "PASSWORD": os.environ.get('POSTGRES_PASSWORD'),
     }
 }
+
 
 
 # Password validation

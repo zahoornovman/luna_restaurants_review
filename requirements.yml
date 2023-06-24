@@ -2,7 +2,15 @@ name: luna
 dependencies:
   - python=3.11.3
   - pip=23.1.2
+  - psycopg2=2.9.3
   - pip:
-      - django==4.2.2
-      - djangorestframework==3.14.0
-      - djangorestframework-simplejwt==5.2.2
+      - django==4.2.2                         # Django web framework
+      - djangorestframework==3.14.0           # Django REST framework
+      - djangorestframework-simplejwt==5.2.2  # Library for JWT tokens
+      - django-cors-headers==4.1.0           # Used to allow browser connection between frontend and backend
+      - drf-yasg==1.21.6                        # Automatic API documentation
+      - flake8==8-6.0.0
+      - gunicorn==20.1.0                      # Python production ready web serve
+      - pillow==9.5.0                         # Python image library - needed when handling images in django
+
+
