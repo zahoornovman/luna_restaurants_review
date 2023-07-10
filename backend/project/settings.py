@@ -41,7 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     #own apps
-    'djangoUser'
+    'djangoUser',
+    'userProfile'
+
+    #third party apps
+    "phonenumber_field"
 
 ]
 

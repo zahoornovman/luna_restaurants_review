@@ -2,8 +2,9 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
-
 User = get_user_model()
+
+
 # Register your models here.
 
 @admin.register(User)
@@ -14,9 +15,9 @@ class UserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields' : ('email', 'username', 'password1', 'password2')
+            'fields': ('email', 'username', 'password1', 'password2')
         })
-    ,)
+        ,)
 
     # fields when reading / updating an instance
     fieldsets = (
@@ -29,5 +30,3 @@ class UserAdmin(UserAdmin):
     # fields shown when looking at a list of instances
     list_display = ('email', 'first_name', 'last_name', 'is_staff')
     ordering = ('email',)
-
-
