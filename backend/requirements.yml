@@ -7,7 +7,7 @@ dependencies:
       - django==4.2.2                         # Django web framework
       - djangorestframework==3.14.0           # Django REST framework
       - djangorestframework-simplejwt==5.2.2  # Library for JWT tokens
-      - django-cors-headers==4.1.0           # Used to allow browser connection between frontend and backend
+      - django-cors-headers==4.1.0           # Allow browser connection between frontend and backend
       - drf-yasg==1.21.6                        # Automatic API documentation
       - flake8
       - gunicorn==20.1.0                      # Python production ready web serve

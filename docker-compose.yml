@@ -3,13 +3,24 @@ version: '3'
 services:
   backend:
     image: lunaimage:latest
+    env_file:
+      - ./envs/dev.envs
     ports:
       - '8001:8000' #  8000: container side, 8001: local machine side
     volumes:
       - ./backend:/backend
     command: 'tail -f /dev/null'
+    depends_on:
+      - postgres
 
   postgres:
     image: postgres:latest
+    env_file:
+      - ./envs/dev.envs
     ports:
       - '5555:5432'
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+
+volumes:
+  postgres_db:
