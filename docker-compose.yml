@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  backend:
+    image: lunaimage:latest
+    ports:
+      - '8001:8000' #  8000: container side, 8001: local machine side
+    volumes:
+      - ./backend:/backend
+    command: 'tail -f /dev/null'
+
+  postgres:
+    image: postgres:latest
+    ports:
+      - '5555:5432'
