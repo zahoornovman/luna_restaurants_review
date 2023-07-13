@@ -129,6 +129,7 @@ fabric.properties
 .Python
 env/
 envs/
+*/envs/
 build/
 develop-eggs/
 dist/
@@ -198,6 +199,7 @@ celerybeat-schedule
 
 # dotenv
 .env
+.envs
 
 # virtualenv
 .venv
