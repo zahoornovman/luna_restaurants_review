@@ -4,4 +4,4 @@ from registration.models import Registration
 
 # Register your models here.
 
-admin.register(Registration)
+admin.site.register(Registration)

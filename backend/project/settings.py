@@ -42,10 +42,15 @@ INSTALLED_APPS = [
 
     #own apps
     'djangoUser',
-    'userProfile'
+    'userProfile',
+    'review',
+    'restaurant',
+    'registration',
+    'category',
+    'comment',
 
     #third party apps
-    "phonenumber_field"
+    "phonenumber_field",
 
 ]
 
